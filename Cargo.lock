@@ -884,6 +884,7 @@ dependencies = [
  "ctor",
  "dtor",
  "futures",
+ "hex",
  "hmac",
  "http",
  "http-body-util",
