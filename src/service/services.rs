@@ -9,7 +9,7 @@ use tokio::sync::Mutex;
 
 use crate::{
 	account_data, admin, announcements, antispam, appservice, client, config, emergency,
-	federation, firstrun, globals, key_backups, mailer,
+	federation, firstrun, globals, key_backups, login_security, mailer,
 	manager::Manager,
 	media, moderation, password_reset, presence, pusher, registration_tokens, resolver, rooms,
 	sending, server_keys,
@@ -26,6 +26,7 @@ pub struct Services {
 	pub emergency: Arc<emergency::Service>,
 	pub globals: Arc<globals::Service>,
 	pub key_backups: Arc<key_backups::Service>,
+	pub login_security: Arc<login_security::Service>,
 	pub media: Arc<media::Service>,
 	pub password_reset: Arc<password_reset::Service>,
 	pub mailer: Arc<mailer::Service>,
@@ -83,6 +84,7 @@ impl Services {
 			emergency: build!(emergency::Service),
 			globals: build!(globals::Service),
 			key_backups: build!(key_backups::Service),
+			login_security: build!(login_security::Service),
 			media: build!(media::Service),
 			password_reset: build!(password_reset::Service),
 			mailer: build!(mailer::Service),
